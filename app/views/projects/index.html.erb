@@ -1,0 +1,26 @@
+<%= flash[:notice] %>
+
+<h1>Welcome to the disaster relief portal</h1>
+
+<h4>Current Project List</h4>
+<table>
+<tr>
+<th>Project Name</th>
+</tr>
+
+<% @projects.each do |project| %>
+<tr>
+<td><%= project.title %></td>
+<td><%= link_to 'Show', project, method: :get %></td>
+<td><%= link_to 'Destroy', project, method: :delete %> </td>
+
+</tr>
+<% end %>
+</table>
+
+
+
+
+<ul>
+<li><%= link_to 'Create new projects', new_project_path %></li>
+</ul>
